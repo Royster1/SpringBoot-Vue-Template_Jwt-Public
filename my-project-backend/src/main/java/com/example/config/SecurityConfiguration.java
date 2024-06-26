@@ -1,6 +1,8 @@
 package com.example.config;
 
 import com.example.entity.RestBean;
+import com.example.entity.vo.response.AuthorizeVO;
+import com.example.utils.JwtUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -8,9 +10,11 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,6 +23,9 @@ import java.io.IOException;
 // SpringSecurity基本配置
 @Configuration
 public class SecurityConfiguration {
+
+    @Resource
+    JwtUtils utils;
 
     // security安全过滤链
     @Bean
@@ -49,12 +56,22 @@ public class SecurityConfiguration {
     }
 
     // 登录成功
+    // 登录成功需要给用户发jwt令牌,不然访问不了
     public void onAuthenticationSuccess(HttpServletRequest request,
                                         HttpServletResponse response,
                                         Authentication authentication) throws IOException, ServletException {
         // 告诉前端发送的数据是json格式,字符编码格式是utf-8
         response.setContentType("application/json;charset=utf-8");
-        response.getWriter().write(RestBean.success().asJsonString());
+        User user = (User) authentication.getPrincipal(); // 读取用户信息
+        // 用户登录成功获取token
+        String token = utils.createJwt(user,1, "小明");
+        // 当然我们不仅需要获取token, 我们还需要获取到令牌的过期时间和用户信息(封装好)
+        AuthorizeVO vo = new AuthorizeVO();
+        vo.setExpire(utils.expireTime());
+        vo.setRole("");
+        vo.setToken(token);
+        vo.setUsername("小明");
+        response.getWriter().write(RestBean.success(vo).asJsonString());
     }
 
     // 登录失败
