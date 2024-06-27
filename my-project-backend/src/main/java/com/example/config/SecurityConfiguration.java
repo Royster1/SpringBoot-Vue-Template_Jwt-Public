@@ -14,7 +14,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
@@ -23,7 +22,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.rmi.AccessException;
+import java.io.PrintWriter;
 
 // SpringSecurity基本配置
 @Configuration
@@ -72,8 +71,6 @@ public class SecurityConfiguration {
     }
 
 
-
-
     // 登录成功
     // 登录成功需要给用户发jwt令牌,不然访问不了
     public void onAuthenticationSuccess(HttpServletRequest request,
@@ -105,7 +102,7 @@ public class SecurityConfiguration {
     // 没有用户权限
     public void onAccessDeny(HttpServletRequest request,
                              HttpServletResponse response,
-                             AccessDeniedException   exception) throws IOException {
+                             AccessDeniedException exception) throws IOException {
         response.setContentType("application/json;charset=utf-8");
         response.getWriter().write(RestBean.forbidden(exception.getMessage()).asJsonString());
     }
@@ -119,7 +116,15 @@ public class SecurityConfiguration {
     }
 
     // 退出登录成功
-    public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
-
+    public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException {
+        response.setContentType("application/json;charset=utf-8");
+        PrintWriter writer = response.getWriter();
+        // 从请求头中获取我们的验证信息
+        String authorization = request.getHeader("Authorization");
+        if (utils.invalidateJwt(authorization)) {
+            writer.write(RestBean.success().asJsonString());
+        } else {
+            writer.write(RestBean.failure(400, "退出登录失败").asJsonString());
+        }
     }
 }
