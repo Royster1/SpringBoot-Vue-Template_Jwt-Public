@@ -1,8 +1,10 @@
 package com.example.config;
 
 import com.example.entity.RestBean;
+import com.example.entity.dto.Account;
 import com.example.entity.vo.response.AuthorizeVO;
 import com.example.filter.JwtAuthorizeFilter;
+import com.example.service.AccountService;
 import com.example.utils.JwtUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -33,6 +35,9 @@ public class SecurityConfiguration {
 
     @Resource
     JwtAuthorizeFilter jwtAuthorizeFilter;
+
+    @Resource
+    AccountService accountService;
 
     // security安全过滤链
     @Bean
@@ -79,14 +84,15 @@ public class SecurityConfiguration {
         // 告诉前端发送的数据是json格式,字符编码格式是utf-8
         response.setContentType("application/json;charset=utf-8");
         User user = (User) authentication.getPrincipal(); // 读取用户信息
+        Account account = accountService.findAccountByNameOrEmail(user.getUsername());
         // 用户登录成功获取token
-        String token = utils.createJwt(user, 1, "小明");
+        String token = utils.createJwt(user, account.getId(), account.getUsername());
         // 当然我们不仅需要获取token, 我们还需要获取到令牌的过期时间和用户信息(封装好)
         AuthorizeVO vo = new AuthorizeVO();
         vo.setExpire(utils.expireTime());
-        vo.setRole("");
+        vo.setRole(account.getRole());
         vo.setToken(token);
-        vo.setUsername("小明");
+        vo.setUsername(account.getUsername());
         response.getWriter().write(RestBean.success(vo).asJsonString());
     }
 
