@@ -10,8 +10,8 @@ const defaultFailure = (message, code, url) => {
     ElMessage.warning(message)
 }
 
-const defaultError = (error) => {
-    console.error(error)
+const defaultError = (err) => {
+    console.error(err)
     ElMessage.error('发生了一些错误，请联系管理员')
 }
 
@@ -47,9 +47,9 @@ function deleteAccessToken() {
     sessionStorage.removeItem(authItemName)
 }
 
-function internalPost(url, data, headers, success, failure, error = defaultError){
-    axios.post(url, data, { headers: headers }).then(({data}) => {
-        if(data.code === 200)
+function internalPost(url, data, header, success, failure, error = defaultError) {
+    axios.post(url, data, {headers: header}).then(({data}) => {
+        if (data.code === 200)
             success(data.data)
         else
             failure(data.message, data.code, url)
@@ -57,9 +57,9 @@ function internalPost(url, data, headers, success, failure, error = defaultError
 }
 
 
-function internalGet(url, headers, success, failure, error = defaultError){
-    axios.get(url, { headers: headers }).then(({data}) => {
-        if(data.code === 200)
+function internalGet(url, header, success, failure, error = defaultError) {
+    axios.get(url, {headers: header}).then(({data}) => {
+        if (data.code === 200)
             success(data.data)
         else
             failure(data.message, data.code, url)
@@ -67,7 +67,7 @@ function internalGet(url, headers, success, failure, error = defaultError){
 }
 
 
-function login(username, password, remember, success, failure = defaultFailure()) {
+function login(username, password, remember, success, failure = defaultFailure) {
     internalPost('/api/auth/login', {
         username: username,
         password: password
@@ -75,7 +75,7 @@ function login(username, password, remember, success, failure = defaultFailure()
         // 以表单的形式发送
         'Content-Type': 'application/x-www-form-urlencoded'
     }, (data) => {
-        storeAccessToken(remember, data.token, data.expire)
+        storeAccessToken(data.token, remember, data.expire)
         ElMessage.success(`登录成功, 欢迎${data.username}来到我们的系统`)
         success(data)
     }, () => {
