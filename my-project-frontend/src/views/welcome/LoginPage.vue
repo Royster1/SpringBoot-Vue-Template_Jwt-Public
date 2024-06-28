@@ -5,7 +5,7 @@
       <div style="font-size: 14px;color: grey">在进入系统之前请先输入用户名和密码进行登录</div>
     </div>
     <div style="margin-top: 50px">
-      <el-form :model="form">
+      <el-form :model="form" :rules="rule" ref="formRef">
         <el-form-item prop="username">
           <el-input v-model="form.username" maxlength="10" type="text" placeholder="用户名/邮箱">
             <template #prefix>
@@ -37,7 +37,7 @@
       </el-form>
     </div>
     <div style="margin-top: 40px">
-      <el-button style="width: 270px" type="success" plain>立即登录</el-button>
+      <el-button @click="userLogin" style="width: 270px" type="success" plain>立即登录</el-button>
     </div>
     <el-divider>
       <span style="color: grey;font-size: 13px">没有账号</span>
@@ -50,13 +50,33 @@
 
 <script setup>
 import {User, Lock} from '@element-plus/icons-vue'
-import {reactive} from "vue";
+import {reactive, ref} from "vue";
+import {login} from "@/net/index.js";
 
 const form = reactive({
   username: '',
   password: '',
   remember: false
 })
+
+const rule = {
+  username: [
+    {required:true, message:'请输入用户名'}
+  ],
+  password: [
+    {required:true, message:'请输入密码'}
+  ]
+}
+
+const formRef = ref()
+function userLogin(){
+  formRef.value.validate((valid)=>{
+    // 验证成功
+    if (valid) {
+      login(form.username, form.password, form.remember,()=>{})
+    }
+  })
+}
 </script>
 
 <style scoped>
