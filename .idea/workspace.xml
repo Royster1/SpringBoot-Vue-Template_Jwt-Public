@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e1da315-99d7-4c85-b981-042acf2d8846" name="变更" comment="">
+    <list default="true" id="3e1da315-99d7-4c85-b981-042acf2d8846" name="变更" comment="后端：跨域手动配置">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/service/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/service/impl/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/service/impl/AccountServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/utils/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/utils/Const.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-project-frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project-backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-backend/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-project-frontend/src/net/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-frontend/src/net/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project-frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-frontend/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project-frontend/src/views/welcome/LoginPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-frontend/src/views/welcome/LoginPage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +25,8 @@
       <list>
         <option value="Record" />
         <option value="Interface" />
-        <option value="Vue Single File Component" />
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
         <option value="Class" />
       </list>
     </option>
@@ -47,44 +52,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Java/IdeaProjects/itbaima/my-project/my-project-frontend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "yarn",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2505747",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "80c6b4d10458cd7c10aaf1f192f55c13",
-    "ts.external.directory.path": "C:\\Java\\IntelliJ IDEA 2022.1\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Java/IdeaProjects/itbaima/my-project/my-project-frontend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2505747&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;80c6b4d10458cd7c10aaf1f192f55c13&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Java\\IntelliJ IDEA 2022.1\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Java\IdeaProjects\itbaima\my-project\my-project-frontend\src\views" />
       <recent name="C:\Java\IdeaProjects\itbaima\my-project" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="Spring Boot.MyProjectBackendApplication">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:8080">
       <method v="2" />
     </configuration>
@@ -124,8 +129,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev" />
         <item itemvalue="Spring Boot.MyProjectBackendApplication" />
+        <item itemvalue="npm.dev" />
         <item itemvalue="npm.serve" />
       </list>
     </recent_temporary>
@@ -146,7 +151,9 @@
       <workItem from="1719561215193" duration="1260000" />
       <workItem from="1719562496358" duration="2555000" />
       <workItem from="1719565098101" duration="32000" />
-      <workItem from="1719565137624" duration="11105000" />
+      <workItem from="1719565137624" duration="11680000" />
+      <workItem from="1719989234965" duration="3177000" />
+      <workItem from="1720069512222" duration="11986000" />
     </task>
     <task id="LOCAL-00001" summary="初始文件创建">
       <created>1719389892432</created>
@@ -204,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719594322659</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="后端：跨域手动配置">
+      <created>1719596018301</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1719596018301</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +244,17 @@
     <MESSAGE value="后端：实现数据库用户校验" />
     <MESSAGE value="前端: 基本页面配置,登录界面编写" />
     <MESSAGE value="前端：Axios请求封装" />
-    <option name="LAST_COMMIT_MESSAGE" value="前端：Axios请求封装" />
+    <MESSAGE value="后端：跨域手动配置" />
+    <option name="LAST_COMMIT_MESSAGE" value="后端：跨域手动配置" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.beans.factory.BeanCreationException" package="org.springframework.beans.factory" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

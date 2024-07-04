@@ -83,4 +83,36 @@ function login(username, password, remember, success, failure = defaultFailure) 
     })
 }
 
-export {login}
+// 退出登录, 退出成功删掉token
+function logout(success, failure = defaultFailure) {
+    get('/api/auth/logout', () => {
+        deleteAccessToken()
+        ElMessage.success('退出登录成功')
+        success()
+    }, failure)
+}
+
+// 是否验证
+function unauthorized(){
+    return !takeAccessToken()
+}
+
+
+// 获取请求头
+function accessHeader() {
+    const token = takeAccessToken();
+    return token ? {
+        'Authorization': `Bearer ${takeAccessToken()}`
+    } : {}
+}
+
+// 封装get, post
+function get(url, success, failure = defaultFailure()) {
+    internalGet(url, accessHeader(), success, failure)
+}
+
+function post(url, data, success, failure = defaultFailure()) {
+    internalGet(url, data, accessHeader(), success, failure)
+}
+
+export {login, logout, get, post, unauthorized}

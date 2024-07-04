@@ -31,7 +31,7 @@
             </el-form-item>
           </el-col>
           <el-col :span="12" style="text-align: right">
-            <el-link >忘记密码？</el-link>
+            <el-link>忘记密码？</el-link>
           </el-col>
         </el-row>
       </el-form>
@@ -52,6 +52,7 @@
 import {User, Lock} from '@element-plus/icons-vue'
 import {reactive, ref} from "vue";
 import {login} from "@/net/index.js";
+import router from "@/router/index.js";
 
 const form = reactive({
   username: '',
@@ -61,19 +62,20 @@ const form = reactive({
 
 const rule = {
   username: [
-    {required:true, message:'请输入用户名'}
+    {required: true, message: '请输入用户名'}
   ],
   password: [
-    {required:true, message:'请输入密码'}
+    {required: true, message: '请输入密码'}
   ]
 }
 
 const formRef = ref()
-function userLogin(){
-  formRef.value.validate((valid)=>{
+
+function userLogin() {
+  formRef.value.validate((valid) => {
     // 验证成功
     if (valid) {
-      login(form.username, form.password, form.remember,()=>{})
+      login(form.username, form.password, form.remember, () => router.push('/index'))
     }
   })
 }

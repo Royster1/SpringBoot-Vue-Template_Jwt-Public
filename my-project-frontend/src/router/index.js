@@ -1,4 +1,5 @@
 import {createRouter, createWebHistory} from 'vue-router'
+import {unauthorized} from "@/net/index.js";
 
 
 const router = createRouter({
@@ -15,7 +16,27 @@ const router = createRouter({
                     component: () => import('@/views/welcome/LoginPage.vue')
                 },
             ]
+        }, {
+            path: '/index',
+            name: 'index',
+            component: () => import('@/views/welcome/IndexView.vue')
         }
     ]
 })
+
+// 配置路由守卫 防止用户没有登录就能访问我们的页面
+router.beforeEach((to, form, next) => {
+    // 判断是否完成登录
+    const isUnauthorized = unauthorized()
+    // 用户已经登录并且访问登录页面
+    if (to.name.startsWith('welcome-') && !isUnauthorized) {
+        next('/index')
+        // 没有登录访问登录后的页面
+    } else if (to.fullPath.startsWith('/index') && isUnauthorized) {
+        next('/')
+    } else {
+        next()
+    }
+})
+
 export default router
