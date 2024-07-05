@@ -46,7 +46,7 @@ public class SecurityConfiguration {
                 // 拦截,登录登出,csrf关闭,状态管理
                 .authorizeRequests(conf -> conf
                         // 这个url允许所有的请求放行
-                        .requestMatchers(new AntPathRequestMatcher("/api/auth/**", "/error")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/api/auth/**")).permitAll()
                         // 其他的需要验证登录才能访问
                         .anyRequest().authenticated()
                 )

@@ -9,7 +9,7 @@ import com.example.service.AccountService;
 import com.example.utils.Const;
 import com.example.utils.FlowUtils;
 import org.springframework.amqp.core.AmqpTemplate;
-import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -32,7 +32,7 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> impl
     AmqpTemplate amqpTemplate;
 
     @Resource
-    RedisTemplate redisTemplate;
+    StringRedisTemplate template;
 
     @Resource
     PasswordEncoder encoder;
@@ -57,23 +57,21 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> impl
                 .one();
     }
 
+    // 生成者代码
     @Override
     public String registerEmailVerifyCode(String type, String email, String ip) {
-        // 同一个ip地址发送过来要排队
         synchronized (ip.intern()) {
-            // 如果该ip在冷却中
-            if (!this.verifyLimit(ip))
-                return "请求频繁,请稍后再试";
+            if (!this.verifyLimit(ip)) return "请求频繁，请稍后再试";
             Random random = new Random();
             int code = random.nextInt(899999) + 100000;
             Map<String, Object> data = Map.of("type", type, "email", email, "code", code);
-            // 邮件的发送放进队列里面
             amqpTemplate.convertAndSend("mail", data);
-            redisTemplate.opsForValue()
-                    .set(Const.VERIFY_EMAIL_DATA + email, String.valueOf(code), 3, TimeUnit.MINUTES);
+            template.opsForValue().set(Const.VERIFY_EMAIL_DATA + email,
+                    String.valueOf(code), 3, TimeUnit.MINUTES);
             return null;
         }
     }
+
 
     @Override
     public String registerEmailAccount(EmailRegisterVO vo) {
@@ -81,7 +79,7 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> impl
         String email = vo.getEmail();
         String username = vo.getUsername();
         String key = Const.VERIFY_EMAIL_DATA + email;
-        String code = (String) redisTemplate.opsForValue().get(key);
+        String code = template.opsForValue().get(key);
         if (code == null)
             return "请先获取验证码";
         if (!code.equals(vo.getCode()))
@@ -94,7 +92,7 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> impl
         String password = encoder.encode(vo.getPassword());
         Account account = new Account(null, username, password, email, "user", new Date());
         if (this.save(account)) {
-            redisTemplate.delete(key);
+            template.delete(key);
             return null;
         } else {
             return "内部错误,请联系管理员";

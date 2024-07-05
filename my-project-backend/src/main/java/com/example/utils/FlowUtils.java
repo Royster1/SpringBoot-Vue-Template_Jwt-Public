@@ -1,7 +1,6 @@
 package com.example.utils;
 
-import ch.qos.logback.core.util.TimeUtil;
-import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -12,15 +11,15 @@ import java.util.concurrent.TimeUnit;
 public class FlowUtils {
 
     @Resource
-    RedisTemplate redisTemplate;
+    StringRedisTemplate template;
 
-    public boolean limitOnceCheck(String key, int blockTime){
+    public boolean limitOnceCheck(String key, int blockTime) {
         // 在冷却时间中
-        if (Boolean.TRUE.equals(redisTemplate.hasKey(key))) {
+        if (Boolean.TRUE.equals(template.hasKey(key))) {
             return false;
         } else {
             // 如果不在冷却时间中, 就进入冷却时间中
-            redisTemplate.opsForValue().set(key, "", blockTime, TimeUnit.SECONDS);
+            template.opsForValue().set(key, "", blockTime, TimeUnit.SECONDS);
         }
         return true;
     }

@@ -12,7 +12,7 @@ public class EmailRegisterVO {
     String email;
     @Length(max = 6, min = 6)
     String code;
-    @Pattern(regexp = "^[a-zA-Z0-9_-]{3,16}$\n")
+    @Pattern(regexp = "^[a-zA-Z][a-zA-Z0-9_]{3,15}$")
     @Length(min = 1, max = 10)
     String username;
     @Length(min = 6, max = 20)

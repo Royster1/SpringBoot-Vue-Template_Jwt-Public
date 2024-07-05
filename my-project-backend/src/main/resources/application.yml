@@ -4,10 +4,12 @@ spring:
     username: royster61@163.com
     password: SOZUOHNHSELFISQR
   rabbitmq:
-    addresses: localhost
     username: admin
     password: admin
     virtual-host: /
+    #   阿里云服务器
+    host: 47.120.40.130
+    port: 5672
   security:
     jwt:
       key: royster61
