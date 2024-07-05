@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e1da315-99d7-4c85-b981-042acf2d8846" name="变更" comment="后端：跨域手动配置">
+    <list default="true" id="3e1da315-99d7-4c85-b981-042acf2d8846" name="变更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-project-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/controller/AuthorizeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/controller/AuthorizeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/service/AccountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/service/impl/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/service/impl/AccountServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/utils/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/utils/Const.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-project-backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-backend/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-project-frontend/src/net/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-frontend/src/net/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-project-frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-frontend/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-project-frontend/src/views/welcome/LoginPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-frontend/src/views/welcome/LoginPage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +150,8 @@
       <workItem from="1719565098101" duration="32000" />
       <workItem from="1719565137624" duration="11680000" />
       <workItem from="1719989234965" duration="3177000" />
-      <workItem from="1720069512222" duration="11986000" />
+      <workItem from="1720069512222" duration="12286000" />
+      <workItem from="1720150715123" duration="3217000" />
     </task>
     <task id="LOCAL-00001" summary="初始文件创建">
       <created>1719389892432</created>
@@ -218,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719596018301</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="todo:验证码发送">
+      <created>1720112306539</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1720112306539</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,7 +250,8 @@
     <MESSAGE value="前端: 基本页面配置,登录界面编写" />
     <MESSAGE value="前端：Axios请求封装" />
     <MESSAGE value="后端：跨域手动配置" />
-    <option name="LAST_COMMIT_MESSAGE" value="后端：跨域手动配置" />
+    <MESSAGE value="todo:验证码发送" />
+    <option name="LAST_COMMIT_MESSAGE" value="todo:验证码发送" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
