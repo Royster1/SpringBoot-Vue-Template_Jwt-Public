@@ -93,7 +93,7 @@ function logout(success, failure = defaultFailure) {
 }
 
 // 是否验证
-function unauthorized(){
+function unauthorized() {
     return !takeAccessToken()
 }
 
@@ -107,12 +107,12 @@ function accessHeader() {
 }
 
 // 封装get, post
-function get(url, success, failure = defaultFailure()) {
-    internalGet(url, accessHeader(), success, failure)
+function post(url, data, success, failure = defaultFailure) {
+    internalPost(url, data, accessHeader() , success, failure)
 }
 
-function post(url, data, success, failure = defaultFailure()) {
-    internalGet(url, data, accessHeader(), success, failure)
+function get(url, success, failure = defaultFailure) {
+    internalGet(url, accessHeader(), success, failure)
 }
 
 export {login, logout, get, post, unauthorized}
