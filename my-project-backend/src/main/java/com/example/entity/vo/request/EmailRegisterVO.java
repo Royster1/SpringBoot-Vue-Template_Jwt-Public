@@ -9,6 +9,7 @@ import javax.validation.constraints.Pattern;
 @Data
 public class EmailRegisterVO {
     @Email
+    @Length(min = 4)
     String email;
     @Length(max = 6, min = 6)
     String code;

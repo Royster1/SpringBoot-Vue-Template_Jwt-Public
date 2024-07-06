@@ -7,10 +7,7 @@
     <list default="true" id="3e1da315-99d7-4c85-b981-042acf2d8846" name="变更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/entity/vo/request/EmailRegisterVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/entity/vo/request/EmailRegisterVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-project-frontend/src/net/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-frontend/src/net/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-project-frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-frontend/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-project-frontend/src/views/WelcomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-frontend/src/views/WelcomeView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-project-frontend/src/views/welcome/IndexView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-frontend/src/views/IndexView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-project-frontend/src/views/welcome/LoginPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-frontend/src/views/welcome/LoginPage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -154,7 +151,7 @@
       <workItem from="1720069512222" duration="12286000" />
       <workItem from="1720150715123" duration="12463000" />
       <workItem from="1720258093968" duration="5427000" />
-      <workItem from="1720265673008" duration="2537000" />
+      <workItem from="1720265673008" duration="3773000" />
     </task>
     <task id="LOCAL-00001" summary="初始文件创建">
       <created>1719389892432</created>
@@ -240,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1720170206224</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="前端：注册界面编写&#10;前端：完善注册操作">
+      <created>1720268285717</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1720268285717</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +274,8 @@
     <MESSAGE value="todo:验证码发送" />
     <MESSAGE value="todo:注册接口实现" />
     <MESSAGE value="完成:验证码发送,注册接口实现&#10;yml对rabbitmq配置远程地址" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成:验证码发送,注册接口实现&#10;yml对rabbitmq配置远程地址" />
+    <MESSAGE value="前端：注册界面编写&#10;前端：完善注册操作" />
+    <option name="LAST_COMMIT_MESSAGE" value="前端：注册界面编写&#10;前端：完善注册操作" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
