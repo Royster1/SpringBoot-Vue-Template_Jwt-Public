@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e1da315-99d7-4c85-b981-042acf2d8846" name="变更" comment="前端：密码重置页面">
+    <list default="true" id="3e1da315-99d7-4c85-b981-042acf2d8846" name="变更" comment="后端：密码重置接口设计">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-project-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/controller/AuthorizeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/controller/AuthorizeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/filter/JwtAuthorizeFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/filter/JwtAuthorizeFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/service/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/service/impl/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-backend/src/main/java/com/example/service/impl/AccountServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-project-frontend/src/net/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-frontend/src/net/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project-frontend/src/views/welcome/ResetPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-frontend/src/views/welcome/ResetPage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +150,7 @@
       <workItem from="1720150715123" duration="12463000" />
       <workItem from="1720258093968" duration="5427000" />
       <workItem from="1720265673008" duration="7925000" />
-      <workItem from="1720332186917" duration="2185000" />
+      <workItem from="1720332186917" duration="2663000" />
     </task>
     <task id="LOCAL-00001" summary="初始文件创建">
       <created>1719389892432</created>
@@ -255,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1720274299813</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="后端：密码重置接口设计">
+      <created>1720334420102</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1720334420102</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,7 +289,8 @@
     <MESSAGE value="完成:验证码发送,注册接口实现&#10;yml对rabbitmq配置远程地址" />
     <MESSAGE value="前端：注册界面编写&#10;前端：完善注册操作" />
     <MESSAGE value="前端：密码重置页面" />
-    <option name="LAST_COMMIT_MESSAGE" value="前端：密码重置页面" />
+    <MESSAGE value="后端：密码重置接口设计" />
+    <option name="LAST_COMMIT_MESSAGE" value="后端：密码重置接口设计" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
