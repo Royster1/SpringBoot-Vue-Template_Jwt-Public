@@ -1,7 +1,9 @@
 package com.example.controller;
 
 import com.example.entity.RestBean;
+import com.example.entity.vo.request.ConfirmResetVO;
 import com.example.entity.vo.request.EmailRegisterVO;
+import com.example.entity.vo.request.EmailResetVO;
 import com.example.service.AccountService;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -41,4 +43,21 @@ public class AuthorizeController {
         String message = action.get();
         return message == null ? RestBean.success() : RestBean.failure(400, message);
     }
+
+    // 重置密码
+    @PostMapping("/reset-confirm")
+    public RestBean<Void> restConfirm(@RequestBody @Valid ConfirmResetVO vo) {
+        return this.messageHandle(() -> accountService.resetConfirm(vo));
+    }
+
+    @PostMapping("/reset-password")
+    public RestBean<Void> resetPassword(@RequestBody @Valid EmailResetVO vo) {
+        return this.messageHandle(() ->
+                accountService.resetEmailAccountPassword(vo));
+    }
+
+    // Lambda 表达式
+//    private <T> RestBean<Void> messageHandle(T vo, Function<T, String> function) {
+//        return messageHandle(() -> function.apply(vo));
+//    }
 }

@@ -5,7 +5,6 @@ import com.example.utils.JwtUtils;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -24,8 +23,6 @@ public class JwtAuthorizeFilter extends OncePerRequestFilter {
     @Resource
     JwtUtils utils;
 
-
-
     @Override
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
@@ -34,13 +31,13 @@ public class JwtAuthorizeFilter extends OncePerRequestFilter {
         DecodedJWT jwt = utils.resolveJwt(authorization);
         if (jwt != null) {
             UserDetails user = utils.toUser(jwt);
-            UsernamePasswordAuthenticationToken authentication  =
-                    new UsernamePasswordAuthenticationToken(user,null,user.getAuthorities());
+            UsernamePasswordAuthenticationToken authentication =
+                    new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
             authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
             // 认证通过
             SecurityContextHolder.getContext().setAuthentication(authentication);
             request.setAttribute("id", utils.toId(jwt));
         }
-        filterChain.doFilter(request,response);
+        filterChain.doFilter(request, response);
     }
 }
