@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e1da315-99d7-4c85-b981-042acf2d8846" name="变更" comment="后端：密码重置接口设计">
+    <list default="true" id="3e1da315-99d7-4c85-b981-042acf2d8846" name="变更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-project-frontend/src/views/welcome/ResetPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-frontend/src/views/welcome/ResetPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project-frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-frontend/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project-frontend/src/views/WelcomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/my-project-frontend/src/views/WelcomeView.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +153,7 @@
       <workItem from="1720150715123" duration="12463000" />
       <workItem from="1720258093968" duration="5427000" />
       <workItem from="1720265673008" duration="7925000" />
-      <workItem from="1720332186917" duration="2663000" />
+      <workItem from="1720332186917" duration="4134000" />
     </task>
     <task id="LOCAL-00001" summary="初始文件创建">
       <created>1719389892432</created>
@@ -257,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1720334420102</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="前端：密码重置功能完成">
+      <created>1720334879526</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1720334879526</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,7 +300,8 @@
     <MESSAGE value="前端：注册界面编写&#10;前端：完善注册操作" />
     <MESSAGE value="前端：密码重置页面" />
     <MESSAGE value="后端：密码重置接口设计" />
-    <option name="LAST_COMMIT_MESSAGE" value="后端：密码重置接口设计" />
+    <MESSAGE value="前端：密码重置功能完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="前端：密码重置功能完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
